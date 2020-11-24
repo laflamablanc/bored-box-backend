@@ -4,11 +4,9 @@ games = RestClient.get('https://api.boardgameatlas.com/api/search?client_id=Af1T
 
 games_array = JSON.parse(games)["games"]
 
-User.create(username: 'Sean', password: "1234", subscribed: false)
+User.create(username: 'Sean', password: "1234", address: "41 Mawhinney Ave, Hawthorne, NJ 07506", subscribed: false)
 
 Box.create(user_id: 1)
-
-BoxGame.create(box_id: 1, game_id: 1)
 
 UserLike.create(user_id: 1, game_id: 1)
 
@@ -24,3 +22,7 @@ games_array.each do |game|
     rank: game['rank']
   )
 end
+
+BoxGame.create(box_id: 1, game_id: 1)
+BoxGame.create(box_id: 1, game_id: 3)
+BoxGame.create(box_id: 1, game_id: 5)
