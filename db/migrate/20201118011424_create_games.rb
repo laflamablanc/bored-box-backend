@@ -5,7 +5,8 @@ class CreateGames < ActiveRecord::Migration[6.0]
       t.string :image
       t.float :price
       t.integer :players
-
+      t.float :rating
+      t.integer :rank
     end
   end
 end

@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 2020_11_18_024546) do
     t.string "image"
     t.float "price"
     t.integer "players"
+    t.float "rating"
+    t.integer "rank"
   end
 
   create_table "user_games", force: :cascade do |t|

@@ -19,6 +19,8 @@ games_array.each do |game|
     name: game['name'],
     image: game['image_url'],
     price: game['price'],
-    players: games['min_players']
+    players: game['max_players'],
+    rating: game['average_user_rating'],
+    rank: game['rank']
   )
 end
