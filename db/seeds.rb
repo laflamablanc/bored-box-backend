@@ -24,5 +24,5 @@ games_array.each do |game|
 end
 
 BoxGame.create(box_id: 1, game_id: 1)
-BoxGame.create(box_id: 1, game_id: 3)
 BoxGame.create(box_id: 1, game_id: 5)
+BoxGame.create(box_id: 1, game_id: 3)
