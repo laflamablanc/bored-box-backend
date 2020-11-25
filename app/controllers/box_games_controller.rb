@@ -10,6 +10,13 @@ class BoxGamesController < ApplicationController
     render json: box_game
   end
 
+
+  def destroy
+    @box_game = BoxGame.find(params[:id])
+    @box_game.destroy
+    render json: {}
+  end
+
   private
 
   def box_game_params

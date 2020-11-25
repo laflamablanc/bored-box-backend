@@ -10,6 +10,7 @@ class BoxesController < ApplicationController
   end
 
 
+
   private
 
   def box_params

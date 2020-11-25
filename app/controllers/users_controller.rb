@@ -17,7 +17,8 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :address, :subscribed)
+    params.require(:user).permit(:username, :password, :address, :subscribed,
+      boxes_attributes: [:id, games_attributes: %i[id name price]])
   end
 
 end
