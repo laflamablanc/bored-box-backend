@@ -9,5 +9,9 @@ class User < ApplicationRecord
     return current_box.games
   end
 
+  def collection
+    self.games
+  end
+
 
 end
