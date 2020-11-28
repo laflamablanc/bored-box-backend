@@ -4,7 +4,11 @@ class CreateGames < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :image
       t.float :price
-      t.integer :players
+      t.integer :max_players
+      t.integer :min_players
+      t.integer :play_time
+      t.string :description
+      t.string :genre
       t.float :rating
       t.integer :rank
     end

@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_11_18_024546) do
   create_table "box_games", force: :cascade do |t|
     t.integer "box_id"
     t.integer "game_id"
+    t.integer "rating"
   end
 
   create_table "boxes", force: :cascade do |t|
@@ -28,7 +29,11 @@ ActiveRecord::Schema.define(version: 2020_11_18_024546) do
     t.string "name"
     t.string "image"
     t.float "price"
-    t.integer "players"
+    t.integer "max_players"
+    t.integer "min_players"
+    t.integer "play_time"
+    t.string "description"
+    t.string "genre"
     t.float "rating"
     t.integer "rank"
   end

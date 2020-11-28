@@ -8,20 +8,26 @@ User.create(username: 'Sean', password: "1234", address: "41 Mawhinney Ave, Hawt
 
 Box.create(user_id: 1)
 
+genres = ["Card", "Party", "Fantasy", "Sci-Fi", "Strategy", "Econonmic"]
+
 games_array.each do |game|
   Game.create(
     name: game['name'],
     image: game['image_url'],
     price: game['price'],
-    players: game['max_players'],
+    max_players: game['max_players'],
+    min_players: game['min_players'],
+    play_time: game['min_playtime'],
+    description: game['description'],
+    genre: genres[rand(6)],
     rating: game['average_user_rating'],
     rank: game['rank']
   )
 end
 
-BoxGame.create(box_id: 1, game_id: 1)
-BoxGame.create(box_id: 1, game_id: 5)
-BoxGame.create(box_id: 1, game_id: 3)
+BoxGame.create(box_id: 1, game_id: 1, rating: 3)
+BoxGame.create(box_id: 1, game_id: 5, rating: 4)
+BoxGame.create(box_id: 1, game_id: 3, rating: 5)
 
 UserLike.create(user_id: 1, game_id: 12)
 UserLike.create(user_id: 1, game_id: 13)
