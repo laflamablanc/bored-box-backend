@@ -5,6 +5,9 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :password
       t.string :address
       t.boolean :subscribed
+      t.float :board_score
+      t.float :fantasy_score
+      t.float :players_score
 
     end
   end

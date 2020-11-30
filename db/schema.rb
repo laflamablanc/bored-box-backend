@@ -56,6 +56,9 @@ ActiveRecord::Schema.define(version: 2020_11_18_024546) do
     t.string "password"
     t.string "address"
     t.boolean "subscribed"
+    t.float "board_score"
+    t.float "fantasy_score"
+    t.float "players_score"
   end
 
 end

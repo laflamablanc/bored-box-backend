@@ -7,7 +7,15 @@ games = RestClient.get('https://api.boardgameatlas.com/api/search?client_id=Af1T
 
 # games_array = JSON.parse(games)["games"]
 
-User.create(username: 'Sean', password: "1234", address: "41 Mawhinney Ave, Hawthorne, NJ 07506", subscribed: false)
+User.create(
+  username: 'Sean',
+  password: "1234",
+  address: "41 Mawhinney Ave, Hawthorne, NJ 07506",
+  subscribed: false,
+  board_score: 5,
+  fantasy_score: 7,
+  players_score: 3
+)
 
 Box.create(user_id: 1)
 
