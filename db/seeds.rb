@@ -20,11 +20,14 @@ games_array.each do |game|
     price: game[:price],
     max_players: game[:max_players],
     min_players: game[:min_players],
-    play_time: game[:playtime],
+    play_time: game[:play_time],
     description: game[:description],
     genre: game[:genre],
     rating: game[:rating],
-    rank: game[:rank]
+    rank: game[:rank],
+    board_score: game[:board_score],
+    fantasy_score: game[:fantasy_score],
+    players_score: game[:players_score],
   )
 end
 
