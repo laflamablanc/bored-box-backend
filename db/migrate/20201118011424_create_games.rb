@@ -11,6 +11,9 @@ class CreateGames < ActiveRecord::Migration[6.0]
       t.string :genre
       t.float :rating
       t.integer :rank
+      t.integer :board_score
+      t.integer :fantasy_score
+      t.integer :players_score
     end
   end
 end

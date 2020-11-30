@@ -36,6 +36,9 @@ ActiveRecord::Schema.define(version: 2020_11_18_024546) do
     t.string "genre"
     t.float "rating"
     t.integer "rank"
+    t.integer "board_score"
+    t.integer "fantasy_score"
+    t.integer "players_score"
   end
 
   create_table "user_games", force: :cascade do |t|

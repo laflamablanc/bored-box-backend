@@ -1,8 +1,11 @@
 require 'rest-client'
+require_relative 'games_array.rb'
+
+games_array = get_games
 
 games = RestClient.get('https://api.boardgameatlas.com/api/search?client_id=Af1TZudirh')
 
-games_array = JSON.parse(games)["games"]
+# games_array = JSON.parse(games)["games"]
 
 User.create(username: 'Sean', password: "1234", address: "41 Mawhinney Ave, Hawthorne, NJ 07506", subscribed: false)
 
@@ -12,16 +15,16 @@ genres = ["Card", "Party", "Fantasy", "Sci-Fi", "Strategy", "Econonmic"]
 
 games_array.each do |game|
   Game.create(
-    name: game['name'],
-    image: game['image_url'],
-    price: game['price'],
-    max_players: game['max_players'],
-    min_players: game['min_players'],
-    play_time: game['min_playtime'],
-    description: game['description'],
-    genre: genres[rand(6)],
-    rating: game['average_user_rating'],
-    rank: game['rank']
+    name: game[:name],
+    image: game[:image],
+    price: game[:price],
+    max_players: game[:max_players],
+    min_players: game[:min_players],
+    play_time: game[:playtime],
+    description: game[:description],
+    genre: game[:genre],
+    rating: game[:rating],
+    rank: game[:rank]
   )
 end
 
