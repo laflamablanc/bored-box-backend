@@ -23,7 +23,6 @@ class User < ApplicationRecord
     #Create vector that represents user profile
     @total_reviews = 2
     @user_profile = Vector[self.board_score, self.fantasy_score, self.players_score]
-
   end
 
   def update_user_profile(new_rating_vector)
@@ -65,6 +64,17 @@ class User < ApplicationRecord
     #this will give the cosine similarity
     score = numerator/denominator*100
     return score.to_i
+  end
+
+  def game_recs
+    game_rec_array = []
+    self.create_user_profile
+    Game.all.each do |game|
+      score = game.similarity_score_user(self)
+      game_rec_array.push({game: game, similarity: score})
+    end
+    ranked = game_rec_array.sort_by{|rec| -rec[:similarity]}
+    return ranked
   end
 
 

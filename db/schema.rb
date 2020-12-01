@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_11_18_024546) do
     t.integer "play_time"
     t.string "description"
     t.string "genre"
+    t.string "company"
     t.float "rating"
     t.integer "rank"
     t.integer "board_score"

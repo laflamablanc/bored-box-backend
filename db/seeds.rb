@@ -20,6 +20,7 @@ User.create(
 Box.create(user_id: 1)
 
 genres = ["Card", "Party", "Fantasy", "Sci-Fi", "Strategy", "Econonmic"]
+companies = ["Pandasaurus Games", "Hasbro", "FunTime Gaming", "Gamers Unite", "Hello! Games", "Ambassador Games", "ALterego Games", "Alien Game Co", "Artana", "Badger's Nest", "Kraken Games", ]
 
 games_array.each do |game|
   Game.create(
@@ -32,6 +33,7 @@ games_array.each do |game|
     description: game[:description],
     genre: game[:genre],
     rating: game[:rating],
+    company: companies[rand(15)],
     rank: game[:rank],
     board_score: game[:board_score],
     fantasy_score: game[:fantasy_score],

@@ -9,6 +9,7 @@ class CreateGames < ActiveRecord::Migration[6.0]
       t.integer :play_time
       t.string :description
       t.string :genre
+      t.string :company
       t.float :rating
       t.integer :rank
       t.integer :board_score
