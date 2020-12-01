@@ -309,7 +309,7 @@ def get_games
 "id": 18,
 "name": "Ticket To Ride",
 "image": "https://s3-us-west-1.amazonaws.com/5cc.images/games/uploaded/1559254202421-61wLscAHHSL.jpg",
-"price": 0,
+"price": 59.99,
 "max_players": 5,
 "min_players": 2,
 "play_time": 45,

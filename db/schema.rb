@@ -38,7 +38,11 @@ ActiveRecord::Schema.define(version: 2020_11_18_024546) do
     t.float "rating"
     t.integer "rank"
     t.integer "board_score"
+    t.integer "party_score"
+    t.integer "card_score"
     t.integer "fantasy_score"
+    t.integer "economic_score"
+    t.integer "territory_score"
     t.integer "players_score"
   end
 
@@ -59,7 +63,11 @@ ActiveRecord::Schema.define(version: 2020_11_18_024546) do
     t.string "address"
     t.boolean "subscribed"
     t.float "board_score"
+    t.float "party_score"
+    t.float "card_score"
     t.float "fantasy_score"
+    t.float "economic_score"
+    t.float "territory_score"
     t.float "players_score"
   end
 

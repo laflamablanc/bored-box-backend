@@ -22,7 +22,19 @@ class User < ApplicationRecord
   def create_user_profile
     #Create vector that represents user profile
     @total_reviews = 2
-    @user_profile = Vector[self.board_score, self.fantasy_score, self.players_score]
+    @user_profile = Vector[self.board_score, self.card_score, self.party_score, self.fantasy_score, self.economic_score, self.territory_score, self.players_score]
+  end
+
+  def user_profile
+    return {
+      board_score: self.board_score,
+      card_score: self.card_score,
+      party_score: self.party_score,
+      fantasy_score: self.fantasy_score,
+      economic_score: self.economic_score,
+      territory_score: self.territory_score,
+      players_score: self.players_score
+    }
   end
 
   def update_user_profile(new_rating_vector)

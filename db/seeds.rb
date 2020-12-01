@@ -13,8 +13,13 @@ User.create(
   address: "41 Mawhinney Ave, Hawthorne, NJ 07506",
   subscribed: false,
   board_score: 5,
+  card_score: 6,
+  party_score: 3,
   fantasy_score: 7,
-  players_score: 3
+  economic_score: 7,
+  territory_score: 9,
+  players_score: 3,
+
 )
 
 Box.create(user_id: 1)
@@ -38,6 +43,10 @@ games_array.each do |game|
     board_score: game[:board_score],
     fantasy_score: game[:fantasy_score],
     players_score: game[:players_score],
+    card_score: rand(10),
+    party_score: rand(10),
+    territory_score: rand(10),
+    economic_score: rand(10),
   )
 end
 
