@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2020_11_18_024546) do
   create_table "user_games", force: :cascade do |t|
     t.integer "user_id"
     t.integer "game_id"
+    t.integer "rating"
   end
 
   create_table "user_likes", force: :cascade do |t|
