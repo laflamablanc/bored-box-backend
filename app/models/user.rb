@@ -68,7 +68,8 @@ class User < ApplicationRecord
     user_vector = @user_profile
     #next, create a vector for the game being passed in to the method
     #we will then compare the two vectors to see how similar the games are
-    game_vector = Vector[game.board_score, game.fantasy_score, game.players_score]
+
+    game_vector = Vector[game.board_score, game.card_score, game.party_score, game.fantasy_score, game.economic_score, game.territory_score, game.players_score ]
     #now that we have 2 vectors we will find the similarity by putting the dot product
     #in our numberator, and the product of each vectors magnitude in our denominator
     numerator = user_vector.inner_product(game_vector)

@@ -23,6 +23,7 @@ User.create(
 )
 
 Box.create(user_id: 1)
+Box.create(user_id: 1)
 
 genres = ["Card", "Party", "Fantasy", "Sci-Fi", "Strategy", "Econonmic"]
 companies = ["Pandasaurus Games", "Hasbro", "FunTime Gaming", "Gamers Unite", "Hello! Games", "Ambassador Games", "ALterego Games", "Alien Game Co", "Artana", "Badger's Nest", "Kraken Games", ]
@@ -50,9 +51,13 @@ games_array.each do |game|
   )
 end
 
-BoxGame.create(box_id: 1, game_id: 1, rating: 3)
-BoxGame.create(box_id: 1, game_id: 5, rating: 4)
-BoxGame.create(box_id: 1, game_id: 3, rating: 5)
+BoxGame.create(box_id: 2, game_id: 1, rating: 3)
+BoxGame.create(box_id: 2, game_id: 5, rating: 4)
+BoxGame.create(box_id: 2, game_id: 3, rating: 5)
+
+BoxGame.create(box_id: 1, game_id: 12, rating: 3)
+BoxGame.create(box_id: 1, game_id: 14, rating: 4)
+BoxGame.create(box_id: 1, game_id: 18, rating: 5)
 
 UserLike.create(user_id: 1, game_id: 12)
 UserLike.create(user_id: 1, game_id: 13)
