@@ -19,7 +19,6 @@ User.create(
   economic_score: 7,
   territory_score: 9,
   players_score: 3,
-
 )
 
 Box.create(user_id: 1)
