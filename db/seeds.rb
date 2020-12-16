@@ -5,7 +5,6 @@ games_array = get_games
 
 games = RestClient.get('https://api.boardgameatlas.com/api/search?client_id=Af1TZudirh')
 
-# games_array = JSON.parse(games)["games"]
 
 User.create(
   username: 'Sean',
