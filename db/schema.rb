@@ -58,9 +58,12 @@ ActiveRecord::Schema.define(version: 2020_11_18_024546) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "email"
     t.string "username"
     t.string "password"
+    t.string "name"
     t.string "address"
+    t.integer "zip"
     t.boolean "subscribed"
     t.float "board_score"
     t.float "party_score"

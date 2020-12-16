@@ -11,6 +11,7 @@ User.create(
   username: 'Sean',
   password: "1234",
   address: "41 Mawhinney Ave, Hawthorne, NJ 07506",
+  zip: "07506",
   subscribed: false,
   board_score: 5,
   card_score: 6,
