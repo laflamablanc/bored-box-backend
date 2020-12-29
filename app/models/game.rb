@@ -17,7 +17,7 @@ class Game < ApplicationRecord
     #we will then compare the two vectors to see how similar the games are
     vector_b = Vector[game.board_score, game.fantasy_score, game.players_score]
     #now that we have 2 vectors we will find the similarity by putting the dot product
-    #in our numberator, and the product of each vectors magnitude in our denominator
+    #in our numerator, and the product of each vectors magnitude in our denominator
     numerator = vector_a.inner_product(vector_b)
     denominator = vector_a.r * vector_b.r
     #this will give the cosine similarity
