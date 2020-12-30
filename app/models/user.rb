@@ -73,7 +73,7 @@ class User < ApplicationRecord
     #we will then compare the two vectors to see how similar the games are
 
     game_vector = Vector[game.board_score, game.card_score, game.party_score, game.fantasy_score, game.economic_score, game.territory_score, game.players_score ]
-    #now that we have 2 vectors we will find the similarity by putting the dot product
+    #now that we have 2 vectors we will find the similarity by putting the dot product 
     #in our numerator, and the product of each vectors magnitude in our denominator
     numerator = user_vector.inner_product(game_vector)
     denominator = user_vector.r * game_vector.r
