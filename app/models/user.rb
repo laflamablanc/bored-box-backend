@@ -44,19 +44,22 @@ class User < ApplicationRecord
     #Vitem = vector representation of item being review
     #If the review is favorable, use it to calculate new mean
     #If review was negative, use the inverse vector to calculate new mean
-
+    
     #ex - If a user profile consists of 5 reviews, the effect of a 6th would
+    
     #looks like this:
-
+    
     #(5 x Vold + Vitem)/6
+    
     #formula: Vnew = ((n x Vold) + Vitem )/ n + 1
-    new_vector_x = (@total_reviews * @user_profile[0] + new_rating_vector[0])/(@total_reviews + 1)
-    new_vector_y = (@total_reviews * @user_profile[1] + new_rating_vector[1])/(@total_reviews + 1)
-    new_vector_z = (@total_reviews * @user_profile[2] + new_rating_vector[2])/(@total_reviews + 1)
-    @user_profile = Vector[new_vector_x, new_vector_y, new_vector_z]
+    new_vector_board = (@total_reviews * @user_profile[0] + new_rating_vector[0])/(@total_reviews + 1)
+    new_vector_card = (@total_reviews * @user_profile[1] + new_rating_vector[1])/(@total_reviews + 1)
+    new_vector_party = (@total_reviews * @user_profile[2] + new_rating_vector[2])/(@total_reviews + 1)
+    new_vector_players = (@total_reviews * @user_profile[2] + new_rating_vector[2])/(@total_reviews + 1)
+    @user_profile = Vector[new_vector_board, new_vector_card, new_vector_party, new_vector_players]
     @total_reviews += 1
     return @user_profile
-  end
+    end
 
   def return_user_profile
     @user_profile
@@ -64,14 +67,14 @@ class User < ApplicationRecord
 
   def similarity_score(game)
     # create a vector for the user the method is being called on
-    # attributes needed are board_score, fantasy_score, players_score
+    # attributes needed are board_score, card_score, party_score and players_score
     user_vector = @user_profile
     #next, create a vector for the game being passed in to the method
     #we will then compare the two vectors to see how similar the games are
 
     game_vector = Vector[game.board_score, game.card_score, game.party_score, game.fantasy_score, game.economic_score, game.territory_score, game.players_score ]
     #now that we have 2 vectors we will find the similarity by putting the dot product
-    #in our numberator, and the product of each vectors magnitude in our denominator
+    #in our numerator, and the product of each vectors magnitude in our denominator
     numerator = user_vector.inner_product(game_vector)
     denominator = user_vector.r * game_vector.r
     #this will give the cosine similarity
