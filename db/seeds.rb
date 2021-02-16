@@ -7,7 +7,7 @@ games = RestClient.get('https://api.boardgameatlas.com/api/search?client_id=Af1T
 
 User.create(
   username: 'Sean',
-  password: "1234",
+  password_digest: BCrypt::Password.create('1234'),
   address: "41 Mawhinney Ave, Hawthorne, NJ 07506",
   zip: "07506",
   subscribed: false,
