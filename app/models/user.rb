@@ -89,12 +89,19 @@ class User < ApplicationRecord
     game_rec_array = []
     self.create_user_profile
     Game.all.each do |game|
-      score = game.similarity_score_user(self)
+      if game.similarity_score_user(self) != nil
+        score = game.similarity_score_user(self)
+      else
+        score = 50
+      end
       game_rec_array.push({game: game, similarity: score})
     end
-    ranked = game_rec_array.sort_by{|rec| -rec[:similarity]}
-    return ranked
+    if game_rec_array
+      return game_rec_array
+    else
+      return []
+    end
   end
-
+# ranked = game_rec_array.sort_by{|rec| -rec[:similarity]}
 
 end
