@@ -20,6 +20,21 @@ User.create(
   players_score: 3,
 )
 
+User.create(
+  username: 'Test',
+  password_digest: BCrypt::Password.create('test123'),
+  address: "Mulberry St",
+  zip: "12345",
+  subscribed: false,
+  board_score: 5,
+  card_score: 6,
+  party_score: 3,
+  fantasy_score: 7,
+  economic_score: 7,
+  territory_score: 9,
+  players_score: 3,
+)
+
 Box.create(user_id: 1)
 Box.create(user_id: 1)
 
