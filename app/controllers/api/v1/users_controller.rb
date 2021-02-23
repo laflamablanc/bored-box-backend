@@ -1,6 +1,6 @@
 class Api::V1::UsersController < ApplicationController
 
-  skip_before_action :authorized, only: [:create]
+  skip_before_action :authorized, only: [:create, :index]
 
     def index
       users = User.all
@@ -8,7 +8,7 @@ class Api::V1::UsersController < ApplicationController
     end
     
       def create
-        # byebug
+        byebug
         user = User.create(user_params)
         if user.valid?
           render json: { user: UserSerializer.new(user)}, status: :created
