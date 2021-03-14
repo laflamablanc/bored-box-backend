@@ -3,7 +3,6 @@ class Api::V1::AuthController < ApplicationController
    
     def create
         current_user = User.find {|user| user.username.downcase == user_login_params[:username].downcase}
-        byebug
         if current_user && current_user.authenticate(user_login_params[:password])
             token = encode_token({ user_id: current_user.id })
             render json: { user: UserSerializer.new(current_user), jwt: token}, status: :accepted
